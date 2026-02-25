@@ -20,6 +20,29 @@ export async function run(): Promise<void> {
 
     // Set outputs for other workflow steps to use
     core.setOutput('time', new Date().toTimeString())
+
+    // Write an advanced job summary
+    core.summary.addHeading('Advanced Job Summary', 'h2')
+    core.summary.addImage(
+      'https://octodex.github.com/images/droidtocat.png',
+      'Droidtocat',
+      {
+        width: '64',
+        height: '64'
+      }
+    )
+    core.summary.addTable([
+      [
+        { data: 'File', header: true },
+        { data: 'Result', header: true }
+      ],
+      ['foo.js', 'Pass :success:'],
+      ['bar.js', 'Failure :failure:'],
+      ['test.js', 'Pass :success:']
+    ])
+
+    core.summary.addLink('Custom link', 'https://writeabout.net')
+    core.summary.write()
   } catch (error) {
     // Fail the workflow run if an error occurs
     if (error instanceof Error) core.setFailed(error.message)

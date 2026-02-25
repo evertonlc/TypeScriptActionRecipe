@@ -28310,9 +28310,9 @@ async function run() {
                 { data: 'File', header: true },
                 { data: 'Result', header: true }
             ],
-            ['foo.js', 'Pass :success:'],
-            ['bar.js', 'Failure :failure:'],
-            ['test.js', 'Pass :success:']
+            ['foo.js', 'Pass ::success::'],
+            ['bar.js', 'Failure ::failure::'],
+            ['test.js', 'Pass ::success::']
         ]);
         summary.addLink('Custom link', 'https://writeabout.net');
         summary.write();

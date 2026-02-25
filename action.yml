@@ -1,6 +1,6 @@
 name: TypeScript Action Recipe
 description:
-  Waits for some miliseconds, write an awsome job summary to the workflow output
+  Waits for some milliseconds, write an awesome job summary to the workflow output
   and returns the current date and time.
 author: Everton Confortin
 
